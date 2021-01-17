@@ -1,0 +1,21 @@
+<p>
+  药房查询记录
+</p>
+<button (click)="hideHistory()">返回地址搜索页面</button>
+<table border=1>
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">查询的地址</th>
+    <th scope="col">最近的药房</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let pharmacy of pharmacies">
+    <td>{{ pharmacy.id }}</td>
+    <td>{{ pharmacy.address }}</td>
+    <td>{{ pharmacy.pharmacy }}</td>
+  </tr>
+  </tbody>
+</table>
+
