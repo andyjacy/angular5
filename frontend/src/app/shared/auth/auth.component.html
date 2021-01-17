@@ -1,0 +1,16 @@
+
+<div *ngIf="showSearch">
+  <p>
+    通过登录验证
+  </p>
+  <header>
+    <input [(ngModel)]="address" matInput type="text" name="address" placeholder="输入关键词搜索位置" />
+    <button (click)="search()">搜索地址</button>
+    <button (click)="listHistory()">查询记录</button>
+  </header>
+  <baidu-map [options]="options" (loaded)="loadMap($event)"><control type="navigation" [options]="navOptions"></control></baidu-map>
+</div>
+
+<div *ngIf="showList">
+  <app-pharmacy-list (onHide)="changeHide($event)">查询记录</app-pharmacy-list>
+</div>
